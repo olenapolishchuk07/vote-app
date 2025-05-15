@@ -33,7 +33,7 @@ export default function PollPage() {
   const handleVote = (option: string) => {
     console.log("Vote sent for:", option); // додай це
     api.post('/votes', {
-      vote: { poll_id: poll?.id, option },
+      vote: { option, poll_id: poll?.id },
     });
   };
 

@@ -57,7 +57,8 @@ export default function NewPollPage() {
           placeholder="Заголовок голосування"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="w-full mb-4 p-2 border rounded"
+          required
+            style={{ width: '100%', marginBottom: '1rem' }}
         />
 
         {options.map((option, index) => (
@@ -67,7 +68,7 @@ export default function NewPollPage() {
               placeholder={`Варіант ${index + 1}`}
               value={option}
               onChange={(e) => handleOptionChange(index, e.target.value)}
-              className="flex-1 p-2 border rounded"
+              style={{ flex: 1 }}
             />
             {options.length > 2 && (
               <button
@@ -75,7 +76,7 @@ export default function NewPollPage() {
                 onClick={() => removeOption(index)}
                 className="ml-2 text-red-500"
               >
-                ✕
+                ❌
               </button>
             )}
           </div>
